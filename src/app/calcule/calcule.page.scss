@@ -1,0 +1,176 @@
+#container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+
+ion-header {
+  ion-toolbar {
+    --background: transparent;
+    --border-width: 0;
+    
+    ion-title {
+      font-weight: 600;
+    }
+  }
+}
+
+ion-content {
+  --background: #f8f9fa;
+}
+
+.calculator-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 1rem;
+}
+
+.calculator-card {
+  width: 100%;
+  max-width: 500px;
+  margin: 0;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  background: white;
+  overflow: hidden;
+}
+
+.result-display {
+  background: linear-gradient(135deg, #3880ff, #2b5cbb);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  text-align: right;
+  
+  .operation-preview {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    min-height: 1.5rem;
+  }
+  
+  .result {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    min-height: 2.5rem;
+  }
+}
+
+.inputs-container {
+  margin-bottom: 1.5rem;
+  
+  .custom-input {
+    --background: transparent;
+    --border-color: transparent;
+    --border-radius: 12px;
+    --padding-start: 0;
+    margin-bottom: 1rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    ion-label {
+      color: #666;
+      font-weight: 500;
+    }
+    
+    .number-input {
+      --padding-start: 0;
+      --padding-end: 0;
+      font-size: 1.1rem;
+      --color: #333;
+    }
+  }
+}
+
+.operations-container {
+  margin-bottom: 1.5rem;
+  
+  .custom-segment {
+    background: #f1f3f5;
+    border-radius: 12px;
+    padding: 4px;
+    
+    ion-segment-button {
+      --background: transparent;
+      --background-checked: white;
+      --color: #666;
+      --color-checked: #3880ff;
+      --indicator-color: transparent;
+      min-height: 45px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border-radius: 8px;
+      margin: 0 2px;
+      transition: all 0.3s ease;
+      
+      &::part(indicator) {
+        display: none;
+      }
+      
+      &.segment-button-checked {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+}
+
+.calculate-button {
+  --background: #3880ff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 15px rgba(56, 128, 255, 0.3);
+  margin: 0;
+  height: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  
+  ion-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 480px) {
+  .result-display {
+    padding: 1.5rem;
+    
+    .operation-preview {
+      font-size: 1rem;
+    }
+    
+    .result {
+      font-size: 2rem;
+    }
+  }
+  
+  .calculator-card ion-card-content {
+    padding: 1rem;
+  }
+}

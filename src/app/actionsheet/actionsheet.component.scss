@@ -1,0 +1,121 @@
+.action-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+.modern-button {
+  --background: #ffffff;
+  --background-hover: #f8f9fa;
+  --background-activated: #f0f2f5;
+  --color: #2c3e50;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0.5px;
+  
+  ion-icon {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  &:hover {
+    --box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+}
+
+// Global styles for the action sheet
+:root {
+  .custom-action-sheet {
+    --backdrop-opacity: 0.6 !important;
+    
+    .action-sheet-group {
+      border-radius: 20px 20px 0 0 !important;
+      background: #ffffff !important;
+      
+      &:first-of-type {
+        padding-top: 16px !important;
+      }
+    }
+
+    .action-sheet-title {
+      color: #2c3e50 !important;
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      padding: 16px 16px 20px !important;
+    }
+
+    .action-sheet-button {
+      padding: 16px !important;
+      color: #2c3e50 !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.3px !important;
+      border-radius: 12px !important;
+      margin: 4px 8px !important;
+      transition: all 0.2s ease !important;
+
+      &:hover {
+        background: #f8f9fa !important;
+      }
+
+      &.action-sheet-destructive {
+        color: #dc3545 !important;
+      }
+
+      &.action-sheet-cancel {
+        background: #f8f9fa !important;
+        color: #6c757d !important;
+        font-weight: 400 !important;
+        margin-top: 8px !important;
+      }
+    }
+
+    .action-sheet-group-cancel {
+      background: #ffffff !important;
+      padding: 8px !important;
+    }
+  }
+}
+
+// Android-specific fixes
+.md {
+  .modern-button {
+    --padding-top: 14px;
+    --padding-bottom: 14px;
+  }
+  
+  :root .custom-action-sheet {
+    .action-sheet-button {
+      height: auto !important;
+      min-height: 48px !important;
+    }
+  }
+}
+
+// Add animation for the action sheet
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.action-sheet-wrapper {
+  animation: slideIn 0.3s ease-out;
+}
+

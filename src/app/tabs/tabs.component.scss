@@ -1,0 +1,108 @@
+/* This style is for demonstration purposes only. */
+/* It's not required for the tabs to function. */
+#example-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+:host {
+  display: block;
+  min-height: 100%;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+}
+
+ion-tabs {
+  ion-tab-bar {
+    --background: #ffffff;
+    --border: none;
+    padding: 5px 10px 10px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    height: 60px;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: #ffffff;
+    }
+  }
+  
+  ion-tab-button {
+    --color: #b4b4b4;
+    --color-selected: var(--ion-color-primary);
+    --background: transparent;
+    --background-focused: transparent;
+    --background-focused-opacity: 0;
+    --ripple-color: transparent;
+    position: relative;
+    overflow: visible;
+    transition: all 0.2s ease;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) scale(0);
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--ion-color-primary);
+      transition: transform 0.2s ease;
+      opacity: 0;
+    }
+    
+    &.tab-selected {
+      &::before {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+      }
+      
+      ion-icon {
+        transform: translateY(-4px);
+      }
+      
+      ion-label {
+        font-weight: 600;
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+    }
+    
+    ion-icon {
+      font-size: 22px;
+      transition: transform 0.2s ease;
+    }
+    
+    ion-label {
+      font-size: 12px;
+      margin-top: 4px;
+      font-weight: 500;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+    }
+  }
+}
+
+/* Custom animation for tab change */
+@keyframes tabFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:host ::ng-deep ion-router-outlet > *:not(ion-nav) {
+  animation: tabFadeIn 0.3s ease-out;
+}

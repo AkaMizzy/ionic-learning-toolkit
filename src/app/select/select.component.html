@@ -1,0 +1,49 @@
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label position="stacked">Default Select</ion-label>
+      <ion-select 
+        aria-label="Fruit" 
+        placeholder="Select fruit" 
+        (ionChange)="handleChange($event)"
+        interface="action-sheet">
+        <ion-select-option *ngFor="let fruit of fruits" [value]="fruit.value">{{fruit.text}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Alert Interface</ion-label>
+      <ion-select 
+        aria-label="Fruit" 
+        placeholder="Select fruit" 
+        interface="alert">
+        <ion-select-option *ngFor="let fruit of fruits" [value]="fruit.value">{{fruit.text}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Popover Interface</ion-label>
+      <ion-select 
+        aria-label="Fruit" 
+        placeholder="Select fruit" 
+        interface="popover">
+        <ion-select-option *ngFor="let fruit of fruits" [value]="fruit.value">{{fruit.text}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Multiple Selection</ion-label>
+      <ion-select 
+        aria-label="Fruits" 
+        placeholder="Select multiple fruits" 
+        multiple="true"
+        interface="action-sheet">
+        <ion-select-option *ngFor="let fruit of fruits" [value]="fruit.value">{{fruit.text}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="selectedFruit" class="selection-result">
+    <p>You selected: {{selectedFruit}}</p>
+  </div>
+</ion-content>

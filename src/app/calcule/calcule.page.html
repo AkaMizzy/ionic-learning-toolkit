@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calculator</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="calculator-container">
+    <ion-card class="calculator-card">
+      <ion-card-content>
+        <div class="result-display">
+          <div class="operation-preview">
+            {{ num1 }} {{ selectedOperation }} {{ num2 }}
+          </div>
+          <div class="result">
+            {{ result }}
+          </div>
+        </div>
+
+        <div class="inputs-container">
+          <ion-item class="custom-input">
+            <ion-label position="floating">First Number</ion-label>
+            <ion-input type="number" [(ngModel)]="num1" class="number-input"></ion-input>
+          </ion-item>
+          
+          <ion-item class="custom-input">
+            <ion-label position="floating">Second Number</ion-label>
+            <ion-input type="number" [(ngModel)]="num2" class="number-input"></ion-input>
+          </ion-item>
+        </div>
+        
+        <div class="operations-container">
+          <ion-segment [(ngModel)]="selectedOperation" (ionChange)="calculateResult()" mode="ios" class="custom-segment">
+            <ion-segment-button value="+" class="segment-button">
+              <ion-label>+</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="-" class="segment-button">
+              <ion-label>−</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="*" class="segment-button">
+              <ion-label>×</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="/" class="segment-button">
+              <ion-label>÷</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+        
+        <ion-button expand="block" (click)="calculateResult()" class="calculate-button">
+          <ion-icon name="calculator-outline" slot="start"></ion-icon>
+          Calculate
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

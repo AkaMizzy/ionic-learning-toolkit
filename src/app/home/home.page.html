@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-header></app-header>
+
+  <div class="container">
+    <div class="card-container">
+      <ion-card class="nav-card" (click)="goToCalcule()">
+        <ion-card-content>
+          <ion-icon name="calculator-outline"></ion-icon>
+          <h2>Calculator</h2>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="nav-card" (click)="goToUi()">
+        <ion-card-content>
+          <ion-icon name="layers-outline"></ion-icon>
+          <h2>UI Components</h2>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="nav-card" (click)="goToWeather()">
+        <ion-card-content>
+          <ion-icon name="cloudy-outline"></ion-icon>
+          <h2>Weather</h2>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card class="nav-card" (click)="goToCamera()">
+        <ion-card-content>
+          <ion-icon name="camera-outline"></ion-icon>
+          <h2>Camera</h2>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>camera</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">camera</ion-title>
+    </ion-toolbar>
+  </ion-header>
+    <div id="container">
+      <ion-button expand="full" (click)="captureImage()">Take Picture</ion-button>
+  
+      <div *ngIf="capturedImage">
+        <img [src]="capturedImage" alt="Captured Image" style="width: 100%; margin-top: 10px;" />
+      </div>
+    </div>

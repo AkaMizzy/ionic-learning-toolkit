@@ -1,0 +1,110 @@
+ion-content {
+  --background: #f4f5f8;
+
+  .alert-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+ion-card {
+  margin: 0;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+
+  ion-card-header {
+    padding: 20px;
+    text-align: center;
+
+    ion-card-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--ion-color-dark);
+      margin-bottom: 8px;
+    }
+
+    ion-card-subtitle {
+      font-size: 16px;
+      color: var(--ion-color-medium);
+    }
+  }
+
+  ion-card-content {
+    padding: 20px;
+  }
+}
+
+.alert-button {
+  --background: var(--ion-color-primary);
+  --background-hover: var(--ion-color-primary-shade);
+  --background-activated: var(--ion-color-primary-shade);
+  --border-radius: 25px;
+  --box-shadow: 0 4px 12px rgba(var(--ion-color-primary-rgb), 0.3);
+  margin: 0;
+  height: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.5px;
+
+  ion-icon {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+}
+
+// Custom styles for the alert itself
+:host {
+  --ion-color-primary: #3880ff;
+  --ion-color-primary-rgb: 56, 128, 255;
+  --ion-color-primary-shade: #3171e0;
+}
+
+// Add a nice background gradient
+ion-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--ion-color-primary) 0%, #4c8dff 100%);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+// Custom styles for the alert itself (these will be applied globally)
+:root {
+  .alert-wrapper {
+    border-radius: 15px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .alert-head {
+    padding-top: 20px !important;
+    
+    .alert-title {
+      font-size: 18px !important;
+      font-weight: 600 !important;
+    }
+  }
+
+  .alert-message {
+    color: var(--ion-color-medium) !important;
+  }
+
+  .alert-button-group {
+    padding: 16px !important;
+  }
+
+  .alert-button {
+    border-radius: 8px !important;
+    margin: 0 4px !important;
+  }
+}
